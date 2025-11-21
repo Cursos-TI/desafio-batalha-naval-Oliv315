@@ -15,9 +15,48 @@ int main(){
             tabuleiro[i][j] = 0;
         }
     }
-    for (int d = 0; d < 10; d++) {            //imprimir o 3 quando  a linha e coluna forem valores iguais a1 b2 c3...
-    tabuleiro[d][d] = 3;
+    //for (int d = 0; d < 10; d++) {            //imprimir o 3 quando  a linha e coluna forem valores iguais a1 b2 c3...
+    //tabuleiro[d][d] = 3;
+    //}
+ //------------
+    for (int b = 0; b < 5; b++){
+        tabuleiro[b][2] = 3;                         // <<  imprime o 3 quando chegar na casa C até a contagem 5                     
+        for (int c = 0; c < 5; c++)                   //<< imprime o 3 do A ao F ate a contagem 5
+        {                                        
+            tabuleiro[2][c] = 3;
+        }
     }
+ //-----------
+
+    for (int r = 0; r < 1; r++)
+    {   tabuleiro[7][2] = 3;                //imprime o 3 uma vez na casa 8-3
+        for (int t = 1; t < 4; t++)              
+        {
+            tabuleiro[8][t] = 3;                //imprime o 3 três vezes nas casas 9-2 ate 9-4
+            for (int y = 0; y < 5; y++)
+            {
+                tabuleiro[9][y] = 3;        //imprime o 3 cinco vezes nas casas 10-1 ate 10-5
+            }
+            
+        }
+    }
+    //---------
+    for (int f = 0; f < 1; f++)   //só imprime uma vez o numero 3 no 4-8
+    {
+        tabuleiro[3][7] = 3;
+        for (int g = 6; g < 9; g++)         // imprime o 3 três vezes nas casas 5-7 ate 5-9
+        {
+            tabuleiro[4][g] = 3;            
+            for (int h = 0; h < 1; h++)
+            {
+                tabuleiro[5][7] = 3;         // imprime o 3 uma vez na casa 6-8 
+            }  
+        }  
+    }
+    
+    
+
+
     printf("   ");
     for (int h = 0; h < 10; h++) {                    // imprimir letras A ate H
         printf(" %c", horizontal[h]);
@@ -37,39 +76,3 @@ int main(){
 
     return 0;
 }
-
-
-
-
-
-
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
-
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
-
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
-
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
