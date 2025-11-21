@@ -1,44 +1,39 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+#define LINHA 10
+#define COLUNA 10
 
 int main(){
-    char coluna[11]={' ','A','B','C','D','E','F','G','H','I','J'};
-    int linha[10]={1,2,3,4,5,6,7,8,9,10};
+    char horizontal[10]={'A','B','C','D','F','G','H','I','J','H'};
+    int vertical[10]={1,2,3,4,5,6,7,8,9,10};
 
-    int tabuleiro[10][10] = {
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,3,3,3,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,3,0,0,0,0},
-        {0,0,0,0,0,3,0,0,0,0},
-        {0,0,0,0,0,3,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0}
-    };
-
-    printf("Batalha Naval\n");
-
-
-    for (int i = 0; i < 11; i++)
-    {
-        printf(" %c",coluna[i]);
-    }
-    printf("\n");
-     for (int i = 0; i < 10; i++) {
-        printf("%d  ", linha[i]);
-            for (int j = 0; j < 10; j++)
-            {
-                printf("%d ",tabuleiro[i][j]);
-            }
-        printf("\n");
-    }
+    int tabuleiro[LINHA][COLUNA];
     
 
+    for (int i = 0; i < LINHA; i++) {
+        for (int j = 0; j < COLUNA; j++) {        //dando valor ao tabuleiro
+            tabuleiro[i][j] = 0;
+        }
+    }
+    for (int d = 0; d < 10; d++) {            //imprimir o 3 quando  a linha e coluna forem valores iguais a1 b2 c3...
+    tabuleiro[d][d] = 3;
+    }
+    printf("   ");
+    for (int h = 0; h < 10; h++) {                    // imprimir letras A ate H
+        printf(" %c", horizontal[h]);
+    }
+    printf("\n");
+
+    
+    for (int i = 0; i < LINHA; i++) {               // exibir o tabuleiro 
+        printf("%2d ", vertical[i]);  
+
+        for (int j = 0; j < COLUNA; j++) {
+            printf(" %d", tabuleiro[i][j]);
+        }
+
+        printf("\n");
+    }
 
     return 0;
 }
